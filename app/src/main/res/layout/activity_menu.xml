@@ -1,198 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MenuActivity">
+    android:layout_height="wrap_content"
+    android:background="#3F51B5"
+    android:backgroundTint="#E4E4E4"
+    android:orientation="vertical"
+    android:textAlignment="center"
+    tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbarLayout"
-        android:fitsSystemWindows="true"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="18dp"
+        android:orientation="vertical" />
 
-    <androidx.core.widget.NestedScrollView
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="157dp"
+        app:srcCompat="@mipmap/img_1" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="?android:attr/listDivider" />
 
-            <TextView
-                android:id="@+id/lbl_menu"
-                android:layout_width="match_parent"
-                android:layout_height="79dp"
-                android:text="MENU"
-                android:textAlignment="center"
-                android:textSize="50sp" />
 
-            <!-- Cuestionario Matemática -->
-            <Button
-                android:id="@+id/btnmatequiz"
-                app:strokeWidth="0dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="25dp"
-                app:cardCornerRadius="25dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <!--Matemática-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:orientation="vertical" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:text="Seleccione una materia"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp" />
 
-                    <TextView
-                        android:id="@+id/lblmate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Matemáticas"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </Button>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
 
-            <!-- Cuestionario Inglés -->
-            <Button
-                android:id="@+id/btningquiz"
-                app:strokeWidth="0dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="25dp"
-                app:cardCornerRadius="25dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/Btn_Mate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Matemática" />
 
-                <LinearLayout
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp">
+    <!--Inglés-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/lbling"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Inglés"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </Button>
+    </LinearLayout>
 
-            <!-- Cuestionario Informática -->
-            <Button
-                android:id="@+id/btninfoquiz"
-                app:strokeWidth="0dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="25dp"
-                app:cardCornerRadius="25dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/Btn_Ing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Inglés" />
 
-                <LinearLayout
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp">
+    <!--Informática-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/lblinf"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Informática"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </Button>
+    </LinearLayout>
 
-            <!-- Cuestionario Historia de Ecuador -->
-            <Button
-                android:id="@+id/btnhdequiz"
-                app:strokeWidth="0dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="25dp"
-                app:cardCornerRadius="25dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/Btn_Info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Informática" />
 
-                <LinearLayout
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp">
+    <!--Historia del Ecuador-->
 
-                    <TextView
-                        android:id="@+id/lblhdec"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Historia de Ecuador"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </Button>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:orientation="vertical">
 
-            <!-- Cuestionario Dispositivos Móviles -->
-            <Button
-                android:id="@+id/btndispmovquiz"
-                app:strokeWidth="0dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="25dp"
-                app:cardCornerRadius="25dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    </LinearLayout>
 
-                <LinearLayout
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp">
+    <Button
+        android:id="@+id/Btn_HdEc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Historia del Ecuador" />
 
-                    <TextView
-                        android:id="@+id/lbldm"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dispositivos Móviles"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </Button>
+    <!--Dispositivos Móviles-->
 
-            <!-- Cuestionario Resultados Finales -->
-            <Button
-                android:id="@+id/btnresultados"
-                app:strokeWidth="0dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="25dp"
-                app:cardCornerRadius="25dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:orientation="vertical">
 
-                <LinearLayout
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp">
+    </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/lblres"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Resultados Finales"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </Button>
+    <Button
+        android:id="@+id/Btn_DisMov"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dispositivos Móviles" />
 
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="vertical"></LinearLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <!--Resultados-->
+    <Button
+        android:id="@+id/btnresultados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resultados" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="812dp"
+        android:orientation="vertical"></LinearLayout>
+
+</LinearLayout>

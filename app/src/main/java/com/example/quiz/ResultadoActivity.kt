@@ -1,9 +1,10 @@
+package com.example.quiz
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
-import com.example.quiz.R
 
 class ResultadoActivity : AppCompatActivity() {
 

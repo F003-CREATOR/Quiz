@@ -21,14 +21,11 @@
         <activity
             android:name=".HdEcQuizActivity1"
             android:exported="false" />
-        <activity
+      <!--  <activity
             android:name=".InfoMainActivity1"
-            android:exported="false" />
+            android:exported="false" />-->
         <activity
             android:name=".InglesQuizActivity1"
-            android:exported="false" />
-        <activity
-            android:name=".DisMovQuizActivity1"
             android:exported="false" />
         <activity
             android:name=".MateQuizActivity1"
