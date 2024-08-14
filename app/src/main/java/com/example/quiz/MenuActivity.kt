@@ -4,11 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.quiz.DisMovQuizActivity1
-import com.example.quiz.HdEcQuizActivity1
-import com.example.quiz.InglesQuizActivity1
-import com.example.quiz.MateQuizActivity1
-import com.example.quiz.ResultadoActivity
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,25 +16,45 @@ class MenuActivity : AppCompatActivity() {
         val dispmovquiz = findViewById<Button>(R.id.Btn_DisMov)
         val resultados = findViewById<Button>(R.id.btnresultados)
 
+        val Resultados = intent.getStringExtra("Resultados")
+
         // Configurar el comportamiento de clic para cada botón
         matequiz.setOnClickListener {
-            startActivity(Intent(this, MateQuizActivity1::class.java))
+            val intent = Intent(this, MateQuizActivity1::class.java).apply{
+                putExtra("Resultados", Resultados)
+
+            }
+            startActivity(intent)
         }
 
+
         ingquiz.setOnClickListener {
-            startActivity(Intent(this, InglesQuizActivity1::class.java))
+            val intent = Intent(this, InglesQuizActivity1::class.java).apply{
+                putExtra("Resultados", Resultados)
+            }
+            startActivity(intent)
         }
 
         hdequiz.setOnClickListener {
-            startActivity(Intent(this, HdEcQuizActivity1::class.java))
+            val intent = Intent(this, HdEcQuizActivity1::class.java).apply{
+                putExtra("Resultados", Resultados)
+            }
+            startActivity(intent)
         }
 
         dispmovquiz.setOnClickListener {
-            startActivity(Intent(this, DisMovQuizActivity1::class.java))
+            val intent = Intent(this, DisMovQuizActivity1::class.java).apply{
+                putExtra("Resultados", Resultados)
+            }
+            startActivity(intent)
         }
 
         resultados.setOnClickListener {
-            startActivity(Intent(this, ResultadoActivity::class.java))
+            val intent = Intent(this, ResultadoActivity::class.java).apply{
+                putExtra("Resultados", Resultados)
+            }
+            startActivity(intent)
         }
+
     }
 }

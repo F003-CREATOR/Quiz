@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.RadioButton
 import android.widget.Toast
-import com.example.quiz.MateQuizActivity1.Companion.NOTA_MATE_KEY
 
 class DisMovQuizActivity1 : AppCompatActivity() {
 
@@ -34,16 +33,16 @@ class DisMovQuizActivity1 : AppCompatActivity() {
         setContentView(R.layout.activity_dis_mov_quiz1)
 
         // Asignación de los IDs
-        answer1 = findViewById(R.id.btn1)
-        answer2 = findViewById(R.id.btn2)
-        answer3 = findViewById(R.id.btn3)
-        answer4 = findViewById(R.id.btn4)
+        answer1 = findViewById<RadioButton>(R.id.answer1)
+        answer2 = findViewById<RadioButton>(R.id.answer2)
+        answer3 = findViewById<RadioButton>(R.id.answer3)
+        answer4 = findViewById<RadioButton>(R.id.answer4)
 
-        txtNpregunta = findViewById(R.id.txtNpregunta)
-        txtPregunta = findViewById(R.id.txtPregunta)
+        txtNpregunta = findViewById(R.id.text_question1)
+        txtPregunta = findViewById(R.id.text_question2)
 
-        btnSiguiente = findViewById(R.id.btnSiguiente)
-        btnSalir = findViewById(R.id.btnSalir)
+        btnSiguiente = findViewById(R.id.btn_sig)
+        btnSalir = findViewById(R.id.btn_salir)
 
         btnSiguiente.setOnClickListener {
             siguiente(it)

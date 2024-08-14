@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_quiz"
+    android:background="#CCCCCC"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -12,6 +13,63 @@
     tools:context=".HdEcQuizActivity1"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="34dp">
+
+
+    <CheckBox
+        android:id="@+id/btn1"
+        android:layout_width="265dp"
+        android:layout_height="45dp"
+        android:text="A)"
+        android:textAlignment="viewStart"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.351" />
+
+    <CheckBox
+        android:id="@+id/btn2"
+        android:layout_width="265dp"
+        android:layout_height="45dp"
+        android:text="B)"
+        android:textAlignment="viewStart"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.423" />
+
+    <CheckBox
+        android:id="@+id/btn3"
+        android:layout_width="265dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:text="C)"
+        android:textAlignment="viewStart"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/btn4"
+        android:layout_width="265dp"
+        android:layout_height="45dp"
+        android:text="D)"
+        android:textAlignment="viewStart"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.576" />
 
     <Button
         android:id="@+id/btnSiguiente"
@@ -27,46 +85,7 @@
         app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/txtNpregunta"
-        android:layout_width="280dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="68dp"
-        android:text="Pregunta N"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtPregunta"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtPregunta"
-        android:layout_width="316dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="40dp"
-        android:text="..."
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <CheckBox
-        android:id="@+id/btn1"
-        android:layout_width="265dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="12dp"
-        android:onClick="siguiente"
-        android:text="A)"
-        android:textAlignment="viewStart"
-        app:layout_constraintBottom_toTopOf="@+id/btn2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <CheckBox
+    <Button
         android:id="@+id/btnSalir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,40 +99,33 @@
         app:layout_constraintTop_toBottomOf="@+id/btn4"
         app:layout_constraintVertical_bias="1.0" />
 
-    <CheckBox
-        android:id="@+id/btn2"
-        android:layout_width="266dp"
-        android:layout_height="41dp"
-        android:layout_marginBottom="12dp"
-        android:onClick="siguiente"
-        android:text="B)"
-        android:textAlignment="viewStart"
-        app:layout_constraintBottom_toTopOf="@+id/btn3"
-        tools:layout_editor_absoluteX="73dp" />
-
-    <CheckBox
-        android:id="@+id/btn3"
-        android:layout_width="268dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="16dp"
-        android:onClick="siguiente"
-        android:text="C)"
-        android:textAlignment="viewStart"
-        app:layout_constraintBottom_toTopOf="@+id/btn4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <CheckBox
-        android:id="@+id/btn4"
-        android:layout_width="269dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="252dp"
-        android:onClick="siguiente"
-        android:text="D)"
-        android:textAlignment="viewStart"
+    <TextView
+        android:id="@+id/txtPregunta"
+        android:layout_width="332dp"
+        android:layout_height="75dp"
+        android:text="..."
+        android:textAlignment="gravity"
+        android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="73dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.172" />
+
+    <TextView
+        android:id="@+id/txtNpregunta"
+        android:layout_width="280dp"
+        android:layout_height="42dp"
+        android:text="Pregunta N"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.225" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

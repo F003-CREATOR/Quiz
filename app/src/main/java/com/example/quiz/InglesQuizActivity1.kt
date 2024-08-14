@@ -4,7 +4,6 @@ package com.example.quiz
 import android.content.Context
 import android.os.Bundle
 import android.widget.Button
-import android.widget.CheckBox
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
@@ -35,16 +34,17 @@ class InglesQuizActivity1 : AppCompatActivity() {
         setContentView(R.layout.activity_ingles_quiz1)
 
         // Asignación de los IDs
-        answer1 = findViewById(R.id.btn1)
-        answer2 = findViewById(R.id.btn2)
-        answer3 = findViewById(R.id.btn3)
-        answer4 = findViewById(R.id.btn4)
+        answer1 = findViewById<RadioButton>(R.id.answer1)
+        answer2 = findViewById<RadioButton>(R.id.answer2)
+        answer3 = findViewById<RadioButton>(R.id.answer3)
+        answer4 = findViewById<RadioButton>(R.id.answer4)
 
-        txtNpregunta = findViewById(R.id.txtNpregunta)
-        txtPregunta = findViewById(R.id.txtPregunta)
+        txtNpregunta = findViewById(R.id.text_question1)
+        txtPregunta = findViewById(R.id.text_question2)
 
-        btnSiguiente = findViewById(R.id.btnSiguiente)
-        btnSalir = findViewById(R.id.btnSalir)
+        btnSiguiente = findViewById(R.id.btn_sig)
+        btnSalir = findViewById(R.id.btn_salir)
+
 
         btnSiguiente.setOnClickListener {
             siguiente(it)
@@ -178,8 +178,8 @@ class InglesQuizActivity1 : AppCompatActivity() {
         // Volver al menú principal
         editor.apply()
 
-                // Volver al menú principal
-                finish()
+        // Volver al menú principal
+        finish()
     }
 }
 
