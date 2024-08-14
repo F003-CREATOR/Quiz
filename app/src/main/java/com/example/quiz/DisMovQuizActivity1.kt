@@ -1,35 +1,37 @@
 package com.example.quiz
 
-import android.content.Intent
+import android.content.Context
 import android.os.Bundle
 import android.widget.Button
-import android.widget.CheckBox
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
+import android.widget.RadioButton
 import android.widget.Toast
+import com.example.quiz.MateQuizActivity1.Companion.NOTA_MATE_KEY
 
 class DisMovQuizActivity1 : AppCompatActivity() {
 
-    private lateinit var answer1: CheckBox
-    private lateinit var answer2: CheckBox
-    private lateinit var answer3: CheckBox
-    private lateinit var answer4: CheckBox
+    private lateinit var answer1: RadioButton
+    private lateinit var answer2: RadioButton
+    private lateinit var answer3: RadioButton
+    private lateinit var answer4: RadioButton
     private lateinit var txtNpregunta: TextView
     private lateinit var txtPregunta: TextView
     private lateinit var btnSiguiente: Button
     private lateinit var btnSalir: Button
 
     companion object {
-        private var nota5 = 0
+        const val NOTA_DISMOV_KEY = "nota_dismov" //Clave para guardar la nota en SharedPreferences
     }
+    private var nota5 = 0 // Variable para almacenar la nota (mutable)
     private var Npregunta = 1
 
     private val correctAnswers = listOf(3, 1, 4, 2, 3, 2, 3, 2, 2, 4)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mate_quiz1)
+        setContentView(R.layout.activity_dis_mov_quiz1)
 
         // Asignación de los IDs
         answer1 = findViewById(R.id.btn1)
@@ -168,22 +170,15 @@ class DisMovQuizActivity1 : AppCompatActivity() {
     }
 
     private fun mostrarResultados() {
-        txtNpregunta.text = "Nota obtenida: $nota5"
-        txtPregunta.text = if (nota5 >= 6) {
-            "Estado: Aprobado"
-        } else {
-            "Estado: Reprobado"
-        }
+        // Guardar la nota en SharedPreferences
+        val sharedPreferences = getSharedPreferences("quiz_results5", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putInt(NOTA_DISMOV_KEY, nota5)
+        // Volver al menú principal
+        editor.apply()
 
-        var intent = Intent (this, ResultadoActivity::class.java)
-        intent.putExtra("nota5", nota5)
-        startActivity(intent)
 
-        // Ocultar los elementos no necesarios
-        answer1.visibility = View.GONE
-        answer2.visibility = View.GONE
-        answer3.visibility = View.GONE
-        answer4.visibility = View.GONE
-        btnSiguiente.visibility = View.GONE
+        // Volver al menú principal
+        finish()
     }
 }

@@ -1,5 +1,6 @@
 package com.example.quiz
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -22,15 +23,15 @@ class HdEcQuizActivity1 : AppCompatActivity() {
     private lateinit var btnSalir: Button
 
     companion object {
-        private var nota4 = 0
+        const val NOTA_HDEC_KEY = "nota_hdec" //Clave para guardar la nota en SharedPreferences
     }
     private var Npregunta = 1
-
+    private var nota4 = 0 // Variable para almacenar la nota (mutable)
     private val correctAnswers = listOf(2, 3, 2, 3, 1, 4, 2, 2, 4, 4)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mate_quiz1)
+        setContentView(R.layout.activity_hd_ec_quiz1)
 
         // Asignación de los IDs
         answer1 = findViewById(R.id.btn1)
@@ -169,22 +170,15 @@ class HdEcQuizActivity1 : AppCompatActivity() {
     }
 
     private fun mostrarResultados() {
-        txtNpregunta.text = "Nota obtenida: $nota4"
-        txtPregunta.text = if (nota4 >= 6) {
-            "Estado: Aprobado"
-        } else {
-            "Estado: Reprobado"
-        }
+        // Guardar la nota en SharedPreferences
+        val sharedPreferences = getSharedPreferences("quiz_results4", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putInt(NOTA_HDEC_KEY, nota4)
+        // Volver al menú principal
+        editor.apply()
 
-        var intent = Intent (this, ResultadoActivity::class.java)
-        intent.putExtra("nota4", nota4)
-        startActivity(intent)
 
-        // Ocultar los elementos no necesarios
-        answer1.visibility = View.GONE
-        answer2.visibility = View.GONE
-        answer3.visibility = View.GONE
-        answer4.visibility = View.GONE
-        btnSiguiente.visibility = View.GONE
+        // Volver al menú principal
+        finish()
     }
 }

@@ -1,36 +1,38 @@
 package com.example.quiz
 
 
-import android.content.Intent
+import android.content.Context
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
+import android.widget.RadioButton
 import android.widget.Toast
+
 
 class InglesQuizActivity1 : AppCompatActivity() {
 
-    private lateinit var answer1: CheckBox
-    private lateinit var answer2: CheckBox
-    private lateinit var answer3: CheckBox
-    private lateinit var answer4: CheckBox
+    private lateinit var answer1: RadioButton
+    private lateinit var answer2: RadioButton
+    private lateinit var answer3: RadioButton
+    private lateinit var answer4: RadioButton
     private lateinit var txtNpregunta: TextView
     private lateinit var txtPregunta: TextView
     private lateinit var btnSiguiente: Button
     private lateinit var btnSalir: Button
 
     companion object {
-        private var nota2 = 0
+        const val NOTA_INGLES_KEY = "nota_ing" //Clave para guardar la nota en SharedPreferences
     }
     private var Npregunta = 1
-
+    private var nota2 = 0 // Variable para almacenar la nota (mutable)
     private val correctAnswers = listOf(1, 2, 2, 2, 3, 2, 3, 2, 3, 2)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mate_quiz1)
+        setContentView(R.layout.activity_ingles_quiz1)
 
         // Asignación de los IDs
         answer1 = findViewById(R.id.btn1)
@@ -169,22 +171,15 @@ class InglesQuizActivity1 : AppCompatActivity() {
     }
 
     private fun mostrarResultados() {
-        txtNpregunta.text = "Nota obtenida: $nota2"
-        txtPregunta.text = if (nota2 >= 6) {
-            "Estado: Aprobado"
-        } else {
-            "Estado: Reprobado"
-        }
+        // Guardar la nota en SharedPreferences
+        val sharedPreferences = getSharedPreferences("quiz_results2", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putInt(NOTA_INGLES_KEY, nota2)
+        // Volver al menú principal
+        editor.apply()
 
-        var intent = Intent (this, ResultadoActivity::class.java)
-        intent.putExtra("nota2", nota2)
-        startActivity(intent)
-
-        // Ocultar los elementos no necesarios
-        answer1.visibility = View.GONE
-        answer2.visibility = View.GONE
-        answer3.visibility = View.GONE
-        answer4.visibility = View.GONE
-        btnSiguiente.visibility = View.GONE
+                // Volver al menú principal
+                finish()
     }
 }
+
